@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Default Light Theme */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.dark {
+    background-color: #333333;
+    /* color: #ffffff; */
+  }
+  
+  /* Theme Toggle Button */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Specific Styles for Light and Dark Mode */
+  body.light .home-page {
+    background-color: #f4f4f4;
+  }
+  
+  body.dark .home-page {
+    background-color: #444444;
+  }
+  
+  body.light .text-black {
+    color: black;
+  }
+  
+  body.dark .text-white {
+    color: white;
+  }
+  
