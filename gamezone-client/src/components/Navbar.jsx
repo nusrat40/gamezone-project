@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { Tooltip } from "react-tooltip";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
+import { getTheme, setTheme } from "../utils/theme";
+import { FaRegMoon } from "react-icons/fa";
+import { GoSun } from "react-icons/go";
 
 
 const Navbar = () => {
@@ -67,8 +70,20 @@ const Navbar = () => {
     </>
   );
 
+  const [theme, setThemeState] = useState(getTheme());
+
+  const handleThemeToggle = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setThemeState(newTheme);
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    setTheme(theme);
+  }, [theme]);
+
   return (
-    <div className="navbar bg-base-100 mb-5 p-3">
+    <div className="navbar bg-base-100 mb-5 p-3 sticky top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -96,38 +111,42 @@ const Navbar = () => {
         </div>
         {/* <a className="btn btn-ghost text-3xl italic text-green-500">GAMEZONE</a> */}
 
-      <a className="btn btn-ghost text-3xl italic text-green-500">
-        <Typewriter
-          words={['GAMEZONE']}
-          loop={1}
-          cursor={false}  // No cursor for the button text
-          typeSpeed={100}
-        />
-      </a>
-
-
+        <a className="btn btn-ghost text-3xl italic text-green-500">
+          <Typewriter
+            words={["GAMEZONE"]}
+            loop={1}
+            cursor={false} // No cursor for the button text
+            typeSpeed={100}
+          />
+        </a>
       </div>
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end space-x-2 ">
+
+        {/* theme button */}
+        <button
+          onClick={handleThemeToggle}
+          className="bg-green-500 text-white  rounded-lg"
+        >
+          {theme === "light" ? <FaRegMoon></FaRegMoon> : <GoSun></GoSun>}
+        </button>
+
         {user && user?.email ? (
           <div className="flex justify-center items-center gap-2">
-          <a className="my-anchor-element">
-          <img
-              className="w-10 h-10 rounded-full"
-              src={user?.photoURL}
-              alt=""
-            />
-          </a>
-          <Tooltip anchorSelect=".my-anchor-element" place="top">
-  <p>{user.displayName}</p>
-</Tooltip>
-               
-            
-           
+            <a className="my-anchor-element">
+              <img
+                className="w-10 h-10 rounded-full"
+                src={user?.photoURL}
+                alt=""
+              />
+            </a>
+            <Tooltip anchorSelect=".my-anchor-element" place="top">
+              <p>{user.displayName}</p>
+            </Tooltip>
 
             <button onClick={logOut} className="btn">
               Log out

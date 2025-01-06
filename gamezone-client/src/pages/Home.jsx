@@ -9,22 +9,22 @@ import { getTheme, setTheme } from "../utils/theme";
 const Home = () => {
   const reviews = useLoaderData();
 
-  const [theme, setThemeState] = useState(getTheme());
+  // const [theme, setThemeState] = useState(getTheme());
 
-  const handleThemeToggle = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setThemeState(newTheme);
-    setTheme(newTheme);
-  };
+  // const handleThemeToggle = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setThemeState(newTheme);
+  //   setTheme(newTheme);
+  // };
 
-  useEffect(() => {
-    setTheme(theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   setTheme(theme);
+  // }, [theme]);
 
   return (
     <div className="space-y-8">
 
-      <div className="flex justify-between items-center">
+      {/* <div className="flex justify-between items-center">
        <div></div>
         
         <button
@@ -33,7 +33,7 @@ const Home = () => {
         >
           Switch to {theme === "light" ? "Dark" : "Light"} Mode
         </button>
-      </div>
+      </div> */}
 
       <Banner></Banner>
       <HighestRated reviews={reviews}></HighestRated>
