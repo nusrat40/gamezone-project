@@ -111,6 +111,9 @@ const Navbar = () => {
     setTheme(theme);
   }, [theme]);
 
+   
+
+
   return (
     <div className="navbar bg-white mb-5 p-3 sticky top-0 z-10">
       <div className="navbar-start">
@@ -140,7 +143,7 @@ const Navbar = () => {
         </div>
         {/* <a className="btn btn-ghost text-3xl italic text-green-500">GAMEZONE</a> */}
 
-        <a className="btn btn-ghost text-3xl italic text-green-500">
+        <a className="btn btn-ghost text-3xl font-bold italic text-green-500">
           <Typewriter
             words={["GAMEZONE"]}
             loop={1}
@@ -163,6 +166,8 @@ const Navbar = () => {
         >
           {theme === "light" ? <FaRegMoon></FaRegMoon> : <GoSun></GoSun>}
         </button>
+
+
 
         {user && user?.email ? (
           <div className="flex justify-center items-center gap-2">
