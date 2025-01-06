@@ -35,7 +35,13 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      <li>
+      
+
+      {
+        user ? (
+          <>
+
+<li>
         <NavLink
           to="add-review"
           className={({ isActive }) =>
@@ -67,8 +73,31 @@ const Navbar = () => {
           WatchList
         </NavLink>
       </li>
+
+          </>
+
+        ) : (
+          <>
+          <li>
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "bg-green-300" : "hover:bg-green-300"}`
+              }
+            >
+              About
+            </NavLink>
+          </li>
+  
+        </>
+      )}
+  
     </>
-  );
+
+        )
+      
+
+  
 
   const [theme, setThemeState] = useState(getTheme());
 
@@ -130,7 +159,7 @@ const Navbar = () => {
         {/* theme button */}
         <button
           onClick={handleThemeToggle}
-          className="bg-green-500 text-white  rounded-lg"
+          className="bg-green-500 text-white  rounded-lg hidden md:flex"
         >
           {theme === "light" ? <FaRegMoon></FaRegMoon> : <GoSun></GoSun>}
         </button>

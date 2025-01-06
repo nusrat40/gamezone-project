@@ -88,7 +88,7 @@ const AllReview = () => {
 
 
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10'>
           {
             sortReviews.map(review=><ReviewCard key={review._id} review={review}></ReviewCard>)
           }
