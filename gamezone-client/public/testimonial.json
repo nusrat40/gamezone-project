@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Alex Johnson",
+      "image": "https://i.ibb.co.com/B2jHxMC/32.jpg",
+      "feedback": "This website is amazing! The reviews are detailed and help me decide which games to play.",
+      "rating": 4
+    },
+    {
+      "name": "Emily Smith",
+      "image": "https://i.ibb.co.com/xzxcjBH/65.jpg",
+      "feedback": "I love the way the site organizes the games. The genre filtering is super helpful!",
+      "rating": 5
+    },
+    {
+      "name": "Michael Lee",
+      "image": "https://i.ibb.co.com/k5FyxNs/77.jpg",
+      "feedback": "A must-visit site for gamers! I found all the latest updates and reviews here.",
+      "rating": 5
+    }
+  ]
+  

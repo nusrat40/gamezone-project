@@ -8,14 +8,14 @@ const ReviewCard = ({ review }) => {
 
   return (
     <div>
-      <div className="card bg-base-100   shadow-xl">
+      <div className="card bg-base-100 shadow-xl h-full flex flex-col justify-between">
         <figure className=" py-2">
-          <img src={photo} alt="" className="rounded-xl " />
+          <img src={photo} alt={title} className="rounded-xl " />
         </figure>
-        <div className="card-body items-center text-center">
+        <div className="card-body items-center text-center ">
           <h2 className="card-title font-bold">{title}</h2>
           <p>{des}</p>
-          <div className="md:flex gap-8 text-gray-600">
+          <div className="space-y-2 gap-8 text-gray-600">
 
             {/* rating */}
             <div className="flex gap-2">
