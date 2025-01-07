@@ -15,7 +15,7 @@ const ReviewCard = ({ review }) => {
         <div className="card-body items-center text-center ">
           <h2 className="card-title font-bold">{title}</h2>
           <p>{des}</p>
-          <div className="space-y-2 gap-8 text-gray-600">
+          <div className="space-y-2 gap-8 text-gray-600 ">
 
             {/* rating */}
             <div className="flex gap-2">
